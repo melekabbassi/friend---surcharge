@@ -1,14 +1,13 @@
-#include "Duree.hpp"
+#include "Epreuve.hpp"
 
 class Matiere{
     private:
         int code;
         string nom;
-        vector<string> Epreuves;
+        vector<Epreuve> Epreuves;
     public:
         Matiere(int, string);
         Matiere();
-        void printEp(vector<string> const &Epreuves);
         friend ostream& operator<<(ostream&, const Matiere&);
 };
 
@@ -21,13 +20,6 @@ Matiere::Matiere(int code, string nom){
 Matiere::Matiere(){
     this->code= 0;
     this->nom="";
-}
-
-
-void Matiere::printEp(vector<string> const &Epreuves){
-    for (int i = 0; i < Epreuves.size(); i++) {
-        cout << Epreuves.at(i) << ' ';
-    }
 }
 
 
