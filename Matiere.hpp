@@ -6,12 +6,12 @@ class Matiere{
         string nom;
         vector<Epreuve> Epreuves;
     public:
-        Matiere(int, string);
+        Matiere(int, string, vector<Epreuve>);
         Matiere();
         friend ostream& operator<<(ostream&, const Matiere&);
 };
 
-Matiere::Matiere(int code, string nom){
+Matiere::Matiere(int code, string nom, vector<Epreuve> Epreuves){
     this->code = code;
     this->nom = nom;
     this->Epreuves = Epreuves;
@@ -24,6 +24,12 @@ Matiere::Matiere(){
 
 
 ostream& operator<<(ostream& os, const Matiere& M){
-    os << "code: "<< M.code << endl << "Nom: " << M.nom << endl << "Epreuve: ";
+    os << "code: "<< M.code << endl << "Nom: " << M.nom;
+    
+    for (int i = 0; i < M.Epreuves.size(); i++)
+    {
+        os << M.Epreuves[i];
+    }
+
     return os;
 }
